@@ -36,16 +36,16 @@ export default function HeaderLinks(props) {
           }}
           buttonIcon={Apps}
           dropdownList={[
-            <Link to="/services-page" className={classes.dropdownLink}>
+            <Link to="/services" className={classes.dropdownLink}>
               Услуги
             </Link>,
-              <Link to="/feedback-page" className={classes.dropdownLink}>
-                  Отзывы
+              <Link to="/feedback" className={classes.dropdownLink}>
+                 Врачи
               </Link>,
-              <Link to="/contacts-page" className={classes.dropdownLink}>
+              <Link to="/contacts" className={classes.dropdownLink}>
                  Контакты
               </Link>,
-              <Link to="/about-page" className={classes.dropdownLink}>
+              <Link to="/about" className={classes.dropdownLink}>
                   О нас
               </Link>,
 
@@ -58,7 +58,7 @@ export default function HeaderLinks(props) {
       <ListItem className={classes.listItem}>
         <Tooltip
           id="instagram-tooltip"
-          title="Follow us on instagram"
+          title="Мы в Инстаграм"
           placement={window.innerWidth > 959 ? "top" : "left"}
           classes={{ tooltip: classes.tooltip }}
         >

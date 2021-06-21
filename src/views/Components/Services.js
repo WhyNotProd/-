@@ -1,154 +1,107 @@
 import React from "react";
+// nodejs library that concatenates classes
+
+// react components for routing our app without refresh
+
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
-import InputAdornment from "@material-ui/core/InputAdornment";
-import Icon from "@material-ui/core/Icon";
 // @material-ui/icons
-import Email from "@material-ui/icons/Email";
-import People from "@material-ui/icons/People";
-// core components
+// core components import HeaderLinks from "components/Header/HeaderLinks.js";
 import Header from "components/Header/Header.js";
-import HeaderLinks from "components/Header/HeaderLinks.js";
 import Footer from "components/Footer/Footer.js";
 import GridContainer from "components/Grid/GridContainer.js";
 import GridItem from "components/Grid/GridItem.js";
-import Button from "components/CustomButtons/Button.js";
-import Card from "components/Card/Card.js";
-import CardBody from "components/Card/CardBody.js";
-import CardHeader from "components/Card/CardHeader.js";
-import CardFooter from "components/Card/CardFooter.js";
-import CustomInput from "components/CustomInput/CustomInput.js";
+import { Link } from "react-router-dom";
 
-import styles from "assets/jss/material-kit-react/views/loginPage.js";
+import Parallax from "components/Parallax/Parallax.js";
 
-import image from "assets/img/bg7.jpg";
+import HeaderLinks from "components/Header/HeaderLinks.js";
+
+
+
+import styles from "assets/jss/material-kit-react/views/components.js";
+
+import classNames from "classnames";
+
+import Button from "../../components/CustomButtons/Button";
+import SectionNotifications from "./Sections/SectionNotifications";
+
+
+
 
 const useStyles = makeStyles(styles);
 
 export default function Services(props) {
-    const [cardAnimaton, setCardAnimation] = React.useState("cardHidden");
-    setTimeout(function () {
-        setCardAnimation("");
-    }, 700);
     const classes = useStyles();
     const { ...rest } = props;
     return (
         <div>
             <Header
-                absolute
-                color="transparent"
-                brand="Material Kit React"
+                brand="Стоматологический центр"
                 rightLinks={<HeaderLinks />}
+                fixed
+                color="info"
+                changeColorOnScroll={{
+                    height: 400,
+                    color: "white",
+                }}
                 {...rest}
             />
-            <div
-                className={classes.pageHeader}
-                style={{
-                    backgroundImage: "url(" + image + ")",
-                    backgroundSize: "cover",
-                    backgroundPosition: "top center",
-                }}
-            >
+            <Parallax image={require("assets/img/main.jpg").default}>
                 <div className={classes.container}>
-                    <GridContainer justify="center">
-                        <GridItem xs={12} sm={12} md={4}>
-                            <Card className={classes[cardAnimaton]}>
-                                <form className={classes.form}>
-                                    <CardHeader color="primary" className={classes.cardHeader}>
-                                        <h4>Login</h4>
-                                        <div className={classes.socialLine}>
-                                            <Button
-                                                justIcon
-                                                href="#pablo"
-                                                target="_blank"
-                                                color="transparent"
-                                                onClick={(e) => e.preventDefault()}
-                                            >
-                                                <i className={"fab fa-twitter"} />
-                                            </Button>
-                                            <Button
-                                                justIcon
-                                                href="#pablo"
-                                                target="_blank"
-                                                color="transparent"
-                                                onClick={(e) => e.preventDefault()}
-                                            >
-                                                <i className={"fab fa-facebook"} />
-                                            </Button>
-                                            <Button
-                                                justIcon
-                                                href="#pablo"
-                                                target="_blank"
-                                                color="transparent"
-                                                onClick={(e) => e.preventDefault()}
-                                            >
-                                                <i className={"fab fa-google-plus-g"} />
-                                            </Button>
-                                        </div>
-                                    </CardHeader>
-                                    <p className={classes.divider}>Or Be Classical</p>
-                                    <CardBody>
-                                        <CustomInput
-                                            labelText="First Name..."
-                                            id="first"
-                                            formControlProps={{
-                                                fullWidth: true,
-                                            }}
-                                            inputProps={{
-                                                type: "text",
-                                                endAdornment: (
-                                                    <InputAdornment position="end">
-                                                        <People className={classes.inputIconsColor} />
-                                                    </InputAdornment>
-                                                ),
-                                            }}
-                                        />
-                                        <CustomInput
-                                            labelText="Email..."
-                                            id="email"
-                                            formControlProps={{
-                                                fullWidth: true,
-                                            }}
-                                            inputProps={{
-                                                type: "email",
-                                                endAdornment: (
-                                                    <InputAdornment position="end">
-                                                        <Email className={classes.inputIconsColor} />
-                                                    </InputAdornment>
-                                                ),
-                                            }}
-                                        />
-                                        <CustomInput
-                                            labelText="Password"
-                                            id="pass"
-                                            formControlProps={{
-                                                fullWidth: true,
-                                            }}
-                                            inputProps={{
-                                                type: "password",
-                                                endAdornment: (
-                                                    <InputAdornment position="end">
-                                                        <Icon className={classes.inputIconsColor}>
-                                                            lock_outline
-                                                        </Icon>
-                                                    </InputAdornment>
-                                                ),
-                                                autoComplete: "off",
-                                            }}
-                                        />
-                                    </CardBody>
-                                    <CardFooter className={classes.cardFooter}>
-                                        <Button simple color="primary" size="lg">
-                                            Get started
-                                        </Button>
-                                    </CardFooter>
-                                </form>
-                            </Card>
+                    <GridContainer>
+                        <GridItem>
+                            <div className={classes.brand}>
+                                <Link to={'/'} style={{ color: 'white' }}>
+                                    <h1 className={classes.title}>Стоматологический центр</h1>
+                                    <h3 className={classes.subtitle}>
+                                        {"Лучшая стоматологическая клиника"}
+                                    </h3>
+                                </Link>
+                            </div>
                         </GridItem>
                     </GridContainer>
+
                 </div>
-                <Footer whiteFont />
+
+            </Parallax>
+            <div className={classNames(classes.main, classes.mainRaised)}>
+                <GridItem md={12} className={classes.textCenter}>
+
+
+                    <GridItem md={12} className={classes.textCenter}>
+
+                        <Button style={{ margin: '100px auto 50px'}} color="info" size="lg" round>
+                            Обратная связь
+                        </Button>
+
+                    </GridItem>
+                    <h1 style={{ margin: '0 auto 50px'}}>Услуги</h1>
+                    <ul style={{textAlign:'left'}}>
+                        <li><span style={{color: 'black'}}>Консультация врача-стоматолога, с выдачей консультативного заключения</span> 12 BYN</li>
+                        <li><span style={{color: 'black'}}>Профессиональная чистка зубов (Ультразвуковая чистка+Airflow+покрытие зубов фторлаком (1 зуб)</span> – от 4 BYN)</li>
+                        <li><span style={{color: 'black'}}>(Лечение зубов (Эстетическая реставрация одного зуба фотополимерным материалом) </span> – 120 BYN)</li>
+                        <li><span style={{color: 'black'}}>Лечение зубов (Усложненная эстетическая реставрация одного зуба фотополимерным материалом)</span> – от 150 BYN)</li>
+                        <li><span style={{color: 'black'}}>Отбеливание зубов (Безопасная американская система отбеливания (2 каппы + набор для отбеливания)</span> – 400 BYN)</li>
+                        <li><span style={{color: 'black'}}>Диагностика (Дентальный снимок) – 5 BYN</span> – 5 BYN</li>
+                    </ul>
+                    <ul style={{textAlign:'left'}}>
+                        <li><span style={{color: 'black'}}>Лечение/перелечивание корневых каналов под микроскопом (1-канальный зуб) </span> - 100/150 BYN</li>
+                        <li><span style={{color: 'black'}}>Лечение/перелечивание корневых каналов под микроскопом (2х-канальный зуб)</span> - 200/300 BYT</li>
+                        <li><span style={{color: 'black'}}>Лечение/перелечивание корневых каналов под микроскопом (3х-канальный зуб)</span> - 300/450 BYN </li>
+                        <li><span style={{color: 'black'}}>Лечение/перелечивание корневых каналов под микроскопом (4х-канальный зуб)</span> - 400/600 BYN </li>
+
+                    </ul>
+
+                <SectionNotifications/>
+
+                </GridItem>
+
+
             </div>
+
+
+            <Footer />
         </div>
     );
 }

@@ -3,8 +3,8 @@ import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 
 // @material-ui/icons
-import Dashboard from "@material-ui/icons/Dashboard";
-import Schedule from "@material-ui/icons/Schedule";
+
+
 import List from "@material-ui/icons/List";
 
 // core components
@@ -23,94 +23,52 @@ export default function SectionPills() {
       <div className={classes.container}>
         <div id="navigation-pills">
           <div className={classes.title}>
-            <h3>Navigation Pills</h3>
+            <h3>О нас</h3>
           </div>
-          <div className={classes.title}>
-            <h3>
-              <small>With Icons</small>
-            </h3>
-          </div>
+
           <GridContainer>
             <GridItem xs={12} sm={12} md={8} lg={6}>
               <NavPills
-                color="primary"
+                color="info"
                 tabs={[
                   {
-                    tabButton: "Dashboard",
-                    tabIcon: Dashboard,
+                    tabButton: "История компании",
+                      tabIcon: List,
                     tabContent: (
                       <span>
                         <p>
-                          Collaboratively administrate empowered markets via
-                          plug-and-play networks. Dynamically procrastinate B2C
-                          users after installed base benefits.
+                          Наша клиника была основана 2005 г., это современный многопрофильный медицинским центр, оснащённый современным оборудованием и командой высококвалифицированных специалистов, каждый день успешно решающих сложные медицинские задачи.
                         </p>
                         <br />
                         <p>
-                          Dramatically visualize customer directed convergence
-                          without revolutionary ROI. Collaboratively
-                          administrate empowered markets via plug-and-play
-                          networks. Dynamically procrastinate B2C users after
-                          installed base benefits.
+                          Основным направлением деятельности клиники является стоматология. Уже более 11 лет мы ежедневно доказываем своей работой, что качественная стоматологическая помощь должна быть профессиональной, быстрой и доступной.
                         </p>
                         <br />
                         <p>
-                          Dramatically visualize customer directed convergence
-                          without revolutionary ROI. Collaboratively
-                          administrate empowered markets via plug-and-play
-                          networks. Dynamically procrastinate B2C users after
-                          installed base benefits.
+                          Мы являемся ведущей в нашем городе клиникой в области:
                         </p>
                       </span>
                     ),
                   },
+
                   {
-                    tabButton: "Schedule",
-                    tabIcon: Schedule,
-                    tabContent: (
-                      <span>
-                        <p>
-                          Efficiently unleash cross-media information without
-                          cross-media value. Quickly maximize timely
-                          deliverables for real-time schemas.
-                        </p>
-                        <br />
-                        <p>
-                          Dramatically maintain clicks-and-mortar solutions
-                          without functional solutions. Dramatically visualize
-                          customer directed convergence without revolutionary
-                          ROI. Collaboratively administrate empowered markets
-                          via plug-and-play networks. Dynamically procrastinate
-                          B2C users after installed base benefits.
-                        </p>
-                      </span>
-                    ),
-                  },
-                  {
-                    tabButton: "Tasks",
+                    tabButton: "Приемущества",
                     tabIcon: List,
                     tabContent: (
                       <span>
                         <p>
-                          Collaboratively administrate empowered markets via
-                          plug-and-play networks. Dynamically procrastinate B2C
-                          users after installed base benefits.
+                          Мы являемся ведущей в нашем городе клиникой в области:
                         </p>
                         <br />
                         <p>
-                          Dramatically visualize customer directed convergence
-                          without revolutionary ROI. Collaboratively
-                          administrate empowered markets via plug-and-play
-                          networks. Dynamically procrastinate B2C users after
-                          installed base benefits.
+                          Эстетической стоматологии – создании ослепительной “голливудской” улыбки. Все этапы лечения проводятся с минимальным вмешательством в структуры зуба и максимальным эстетическим эффектом.
                         </p>
                         <br />
                         <p>
-                          Dramatically visualize customer directed convergence
-                          without revolutionary ROI. Collaboratively
-                          administrate empowered markets via plug-and-play
-                          networks. Dynamically procrastinate B2C users after
-                          installed base benefits.
+                          Лечение зубов с помощью стоматологического микроскопа, что позволяют получить визуальный доступ ко всем участкам зуба и провести сложнейшие манипуляции с высокой точностью и непревзойденным качеством (перелечивание безнадежных зубов, удаление из канала сломанных инструментов и т.д.)
+                        </p>
+                           <p>
+                          Замещения отсутствующих зубов – имплантация. Врачи-стоматологи обладают превосходной клинической практикой по установке дентальных имплантатов зубов, что позволяет прогнозировать сроки приживаемости и гарантировать 100% результат.
                         </p>
                       </span>
                     ),
@@ -120,63 +78,31 @@ export default function SectionPills() {
             </GridItem>
             <GridItem xs={12} sm={12} md={12} lg={6}>
               <NavPills
-                color="rose"
+                color="info"
                 horizontal={{
                   tabsGrid: { xs: 12, sm: 4, md: 4 },
                   contentGrid: { xs: 12, sm: 8, md: 8 },
                 }}
                 tabs={[
                   {
-                    tabButton: "Dashboard",
-                    tabIcon: Dashboard,
+                    tabButton: "Как распознать " +
+                        "проблему в зубах?",
+                      tabIcon: List,
                     tabContent: (
                       <span>
                         <p>
-                          Collaboratively administrate empowered markets via
-                          plug-and-play networks. Dynamically procrastinate B2C
-                          users after installed base benefits.
+                         У каждого человека, в какой-то из моментов, возникает необходимость посещения стоматолога. Многие из них учитывают все рекомендации своего специалиста и на регулярной основе проходят профилактические осмотры с полной санацией полости рта.
                         </p>
                         <br />
                         <p>
-                          Dramatically visualize customer directed convergence
-                          without revolutionary ROI. Collaboratively
-                          administrate empowered markets via plug-and-play
-                          networks. Dynamically procrastinate B2C users after
-                          installed base benefits.
+                          Несвоевременное обращение к стоматологу ведёт к тому, что незначительный кариес, который можно было заметить и вылечить при систематическом профилактическом осмотре, быстро разрушает зуб и   восстановление утраченных тканей, идёт уже только за счёт керамической коронки. И именно с этого момента возникает необходимость длительного периода восстановления зуба.
                         </p>
                         <br />
-                        <p>
-                          Dramatically visualize customer directed convergence
-                          without revolutionary ROI. Collaboratively
-                          administrate empowered markets via plug-and-play
-                          networks. Dynamically procrastinate B2C users after
-                          installed base benefits.
-                        </p>
+
                       </span>
                     ),
                   },
-                  {
-                    tabButton: "Schedule",
-                    tabIcon: Schedule,
-                    tabContent: (
-                      <span>
-                        <p>
-                          Efficiently unleash cross-media information without
-                          cross-media value. Quickly maximize timely
-                          deliverables for real-time schemas.
-                        </p>
-                        <br />
-                        <p>
-                          Dramatically maintain clicks-and-mortar solutions
-                          without functional solutions. Dramatically visualize
-                          customer directed convergence without revolutionary
-                          ROI. Collaboratively administrate empowered markets
-                          via plug-and-play networks. Dynamically procrastinate
-                          B2C users after installed base benefits.
-                        </p>
-                      </span>
-                    ),
-                  },
+
                 ]}
               />
             </GridItem>

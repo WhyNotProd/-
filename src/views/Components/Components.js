@@ -31,13 +31,17 @@ export default function Components(props) {
       <Header
         brand="Стоматологический центр"
         rightLinks={<HeaderLinks />}
+
         fixed
+        margin= "auto"
         color="info"
         changeColorOnScroll={{
           height: 400,
           color: "white",
         }}
         {...rest}
+
+
       />
       <Parallax image={require("assets/img/main.jpg").default}>
         <div className={classes.container}>
@@ -56,9 +60,9 @@ export default function Components(props) {
       </Parallax>
 
       <div className={classNames(classes.main, classes.mainRaised)}>
-        <GridItem md={12} className={classes.textCenter}>
-          <Link to={"/services-page"} className={classes.link}>
-            <Button color="info" size="lg" round>
+        <GridItem md={12}  className={classes.textCenter}>
+          <Link to={"/services"} className={classes.link}>
+            <Button style={{ marginTop: '100px' }} color="info" size="lg" round>
               Ознакомиться с услугами
             </Button>
           </Link>
@@ -67,11 +71,7 @@ export default function Components(props) {
               <SectionCarousel />
           </GridItem>
           <GridItem>
-              <SectionPills
-
-                  color="info"
-
-              />
+              <SectionPills/>
           </GridItem>
       </div>
       <Footer />

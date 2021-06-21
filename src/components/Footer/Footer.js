@@ -34,7 +34,7 @@ export default function Footer(props) {
 
             <ListItem className={classes.inlineBlock}>
               <a
-                href="https://www.creative-tim.com/presentation?ref=mkr-footer"
+                href="https://vk.com/whynotprodfilm"
                 className={classes.block}
                 target="_blank"
               >
