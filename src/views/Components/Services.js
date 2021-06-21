@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 // nodejs library that concatenates classes
 
 // react components for routing our app without refresh
@@ -18,15 +18,13 @@ import Parallax from "components/Parallax/Parallax.js";
 import HeaderLinks from "components/Header/HeaderLinks.js";
 
 
-
 import styles from "assets/jss/material-kit-react/views/components.js";
 
 import classNames from "classnames";
 
 import Button from "../../components/CustomButtons/Button";
 import SectionNotifications from "./Sections/SectionNotifications";
-
-
+import axios from "axios";
 
 
 const useStyles = makeStyles(styles);
@@ -34,6 +32,17 @@ const useStyles = makeStyles(styles);
 export default function Services(props) {
     const classes = useStyles();
     const { ...rest } = props;
+    const [services, setServices] = useState([]);
+
+    useEffect(() => {
+        axios.get('http://localhost:5000/api/service')
+          .then(function (response) {
+              // handle success
+              setServices(response.data);
+          })
+      console.log(services);
+    }, []);
+
     return (
         <div>
             <Header
@@ -78,19 +87,12 @@ export default function Services(props) {
                     </GridItem>
                     <h1 style={{ margin: '0 auto 50px'}}>Услуги</h1>
                     <ul style={{textAlign:'left'}}>
-                        <li><span style={{color: 'black'}}>Консультация врача-стоматолога, с выдачей консультативного заключения</span> 12 BYN</li>
-                        <li><span style={{color: 'black'}}>Профессиональная чистка зубов (Ультразвуковая чистка+Airflow+покрытие зубов фторлаком (1 зуб)</span> – от 4 BYN)</li>
-                        <li><span style={{color: 'black'}}>(Лечение зубов (Эстетическая реставрация одного зуба фотополимерным материалом) </span> – 120 BYN)</li>
-                        <li><span style={{color: 'black'}}>Лечение зубов (Усложненная эстетическая реставрация одного зуба фотополимерным материалом)</span> – от 150 BYN)</li>
-                        <li><span style={{color: 'black'}}>Отбеливание зубов (Безопасная американская система отбеливания (2 каппы + набор для отбеливания)</span> – 400 BYN)</li>
-                        <li><span style={{color: 'black'}}>Диагностика (Дентальный снимок) – 5 BYN</span> – 5 BYN</li>
-                    </ul>
-                    <ul style={{textAlign:'left'}}>
-                        <li><span style={{color: 'black'}}>Лечение/перелечивание корневых каналов под микроскопом (1-канальный зуб) </span> - 100/150 BYN</li>
-                        <li><span style={{color: 'black'}}>Лечение/перелечивание корневых каналов под микроскопом (2х-канальный зуб)</span> - 200/300 BYT</li>
-                        <li><span style={{color: 'black'}}>Лечение/перелечивание корневых каналов под микроскопом (3х-канальный зуб)</span> - 300/450 BYN </li>
-                        <li><span style={{color: 'black'}}>Лечение/перелечивание корневых каналов под микроскопом (4х-канальный зуб)</span> - 400/600 BYN </li>
-
+                      {console.log(services)}
+                      {services.map((item, index) => (
+                        <li key={`services-${index}`}>
+                          <span style={{color: 'black'}}>{item.name} ({item.procedure})</span> - {item.price}
+                        </li>
+                      ))}
                     </ul>
 
                 <SectionNotifications/>
